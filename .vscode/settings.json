@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "${workspaceFolder:learn_graphql}/back_graphql/prisma/dev.db",
+      "driver": "SQLite",
+      "name": "prisma-client-js",
+      "previewLimit": 50
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

@@ -1,0 +1,87 @@
+type Query {
+  info: String!
+  feed(filter: String, skip: Int, take: Int, orderBy: PostOrderByInput): Feed!
+  post(id: String): Post!
+  categoriesFeed(filter: String, skip: Int, take: Int, orderBy: CategoryOrderByInput): Categories!
+  category(id: ID!): Category!
+}
+
+type Mutation {
+  post(imageUrl: String, description: String, title: String!, text: String): Post!
+  deletePost(id: ID): Post!
+  updatePost(id: ID!, imageUrl: String, description: String, title: String, text: String): Post!
+  category(title: String!) : Category!
+  updateCategory(id: ID!, title: String!) : Category!
+  deleteCategory(id: ID): Category!
+  connectCategoryPost(postId: ID!, categoryId: ID!): Post!
+  disconnectCategoryPost(postId: ID!, categoryId: ID!): Post!
+  signup(email: String!, password: String!, name: String!): AuthPlayLoad
+  login(email: String!, password: String!): AuthPlayLoad
+  vote(postId: ID!): Vote
+}
+
+type Post {
+  id: ID!
+  description: String!
+  postedBy: User
+  votes: [Vote!]!
+  title: String!
+  imageUrl: String
+  text: String
+  categories: [Category!]!
+}
+
+type AuthPlayLoad {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Post!]!
+}
+
+type Subscription {
+  newPost: Post
+  newVote: Vote
+}
+
+type Vote {
+  id: ID!
+  post: Post!
+  user: User!
+}
+
+input PostOrderByInput {
+  description: Sort
+  imageUrl: Sort
+  createdAt: Sort
+  title: Sort
+}
+
+input CategoryOrderByInput {
+  title: Sort
+}
+
+enum Sort {
+  asc
+  desc
+}
+
+type Feed {
+  posts: [Post!]!
+  count: Int!
+}
+
+type Category {
+  id: ID!
+  title: String!
+  posts: [Post!]!
+}
+
+type Categories {
+  categories: [Category!]!
+  count: Int!
+}
