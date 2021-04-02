@@ -1,0 +1,14 @@
+@import "bootstrap";
+
+.feed {
+  @extend .d-flex !optional;
+  @extend .flex-wrap !optional;
+}
+
+
+.search {
+  &__title {
+    margin: 1rem;
+    text-align: left;
+  }
+}

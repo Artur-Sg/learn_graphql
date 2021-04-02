@@ -1,0 +1,15 @@
+@import "bootstrap";
+
+:host {
+  @extend .sticky-top !optional;
+  box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.4);
+  background-color: #222222;
+}
+
+.layout-header {
+  @extend .navbar !optional;
+  @extend .d-flex !optional;
+  @extend .justify-content-between !optional;
+  @extend .mr-auto !optional;
+  @extend .p-2 !optional;
+}

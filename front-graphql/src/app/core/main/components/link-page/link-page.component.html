@@ -1,0 +1,10 @@
+<app-layout-base>
+  <div *ngIf="post" class="post container-lg">
+    <div class="post__header mb-3 ms-md-3"
+      [ngStyle]="{'background-image':'linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,.6)), url(' + getImage() + ')'}">
+      <h1 class="post__text post__title">{{ post.title }}</h1>
+      <h3 class="post__text post__description">{{ post.description }}</h3>
+    </div>
+    <p class="post__main-text">{{ post.text }}</p>
+  </div>
+</app-layout-base>

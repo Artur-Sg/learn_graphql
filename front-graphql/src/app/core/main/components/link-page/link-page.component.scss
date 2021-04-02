@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display&family=Yanone+Kaffeesatz:wght@600&display=swap");
+
+.post {
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  &__header {
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__text {
+    text-align: left;
+    color: white;
+    // -webkit-text-fill-color: white;
+    // text-shadow: 4px 4px 0 #161616, -2px -2px 0 #161616, 2px -2px 0 #161616,
+    //   -2px 2px 0 #161616, 2px 2px 0 #161616;
+  }
+  &__title {
+    font: 60px/1 "Anton", sans-serif;
+    width: 80%;
+    padding: .5em 2em;
+    letter-spacing: 5px;
+  }
+  &__description {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    width: 90%;
+    font-size: 40px;
+    padding-left: 3em;
+    padding-bottom: .5em;
+    letter-spacing: 2px;
+  }
+  &__main-text {
+    font-size: 20px;
+    padding-bottom: .5em;
+    padding-left: 1em;
+  }
+}

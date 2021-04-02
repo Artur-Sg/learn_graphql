@@ -1,0 +1,34 @@
+<app-layout-base>
+  <h1 class="search__title" *ngIf="feed.count; else elseBlock">Results found: {{ feed.count }}</h1>
+  <ng-template #elseBlock>
+    <h1 class="search__title">No results found</h1>
+  </ng-template>
+  <div *ngIf="loading">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div class="container-lg" *ngIf="feed">
+    <div *ngIf="feed.posts" class="feed">
+      <div *ngFor="let post of feed.posts" class="card m-1 p-2 shadow-sm" style="width: 15vw">
+        <a class="nav-link card-text" routerLink="/feed/{{post.id}}">
+          <img class="card-img-top" [src]="post.imageUrl ? post.imageUrl : 'assets/dummy.png'" alt="{{ post.id }}">
+        </a>
+        <div class="card-body">
+          <a class="nav-link card-text" routerLink="/feed/{{post.id}}">
+            <p class="card-title">{{ post.title }}</p>
+          </a>
+          <p class="card-title">{{ post.description }}</p>
+          <!-- <a class="nav-link card-text" href="https://{{ link.url }}" target="_blank">Ссылка на источник</a> -->
+          <!-- <a class="nav-link card-text" routerLink="/feed/{{post.id}}">Read full</a> -->
+          <p>{{ post.votes.length}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-layout-base>

@@ -1,0 +1,78 @@
+@import "bootstrap";
+
+.feed {
+  @extend .d-flex !optional;
+  @extend .flex-wrap !optional;
+  // @extend .justify-content-center !optional;
+  // &:after {
+  //   content: "";
+  //   flex: auto;
+  // }
+  &__vote-block {
+    @extend .d-flex !optional;
+    @extend .flex-wrap !optional;
+  }
+}
+
+.post {
+  @extend .shadow-sm !optional;
+  @extend .d-flex !optional;
+  @extend .flex-wrap !optional;
+  @extend .flex-row !optional;
+  width: 100%;
+  margin: 2rem 0;
+
+  &__image-link {
+    flex: 0.3;
+  }
+
+  &__image {
+    height: 250px;
+    width: 300px;
+    object-fit: contain;
+  }
+
+  &__title {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &__text {
+    flex: 0.6;
+  }
+}
+.vote {
+  &__icon {
+    padding: 0;
+    margin: auto 0;
+  }
+  &__counter {
+    padding: 0;
+    padding-left: 5px;
+    margin: auto 0;
+  }
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  cursor: pointer;
+
+  &__title {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: gray;
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}

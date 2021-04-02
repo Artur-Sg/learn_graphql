@@ -1,0 +1,10 @@
+$height: 50px;
+
+:host {
+  display: block;
+  height: $height;
+
+  img {
+    height: $height;
+  }
+}
